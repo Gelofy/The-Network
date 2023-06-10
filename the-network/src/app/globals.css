@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+    background-color: #303030;
+}
+
+.flex {
+    display: flex;
+}
+.center-content{
+    justify-content: center;
+}
+.middle-content{
+    align-content: center;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+.div{
+    width: 200px;
+    height: 100vh;
+    background-color: #303030;
+    padding-top: 30px;
+    border-right: solid 1px #636363;
+}
+.list{
+    width: 100%;
+}
+.navbarHeader{
+    width: 100%;
+    height: 30px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
