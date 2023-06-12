@@ -8,6 +8,7 @@ import DnsIcon from '@mui/icons-material/Dns';
 import InfoIcon from '@mui/icons-material/Info';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Navbar(){
   return (
