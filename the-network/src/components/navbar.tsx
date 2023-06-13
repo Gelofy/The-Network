@@ -8,13 +8,12 @@ import DnsIcon from '@mui/icons-material/Dns';
 import InfoIcon from '@mui/icons-material/Info';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
-import MenuIcon from '@mui/icons-material/Menu';
 
 function Navbar(){
   return (
     <nav className={ navbarStyle.div }>
       {/* Navbar Header */}
-      <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#a3a3a3' }} />} className={ navbarStyle.navbarHeader }>
+      <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={ navbarStyle.navbarHeader }>
         <div className='flex middle-content center-content'>
           <DnsIcon sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }}></DnsIcon>
         </div>
@@ -24,7 +23,7 @@ function Navbar(){
           </Typography>
         </div>
       </Stack>
-      <Divider variant="middle" style={{ backgroundColor: '#a3a3a3' }}/>
+      <Divider variant="middle" style={{ backgroundColor: '#636363' }}/>
       {/* List of Subsites */}
       <List className={ navbarStyle.list}>
         <ListItem disablePadding>

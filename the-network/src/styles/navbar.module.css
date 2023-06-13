@@ -14,3 +14,14 @@
     margin-right: 16px;
     margin-bottom: 30px;
 }
+
+@media only screen and (max-width: 800px) {
+    .div{
+        position: fixed;
+        left: -201px;
+        width: 200px;
+        height: 100vh;
+        background-color: #303030;
+        border-right: solid 1px #636363;
+    }
+}

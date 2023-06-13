@@ -13,3 +13,9 @@ body{
     align-content: center;
     flex-wrap: wrap;
 }
+.fill-h{
+    height: 100%;
+}
+.fill-w{
+    width: 100%;
+}
