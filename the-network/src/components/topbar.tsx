@@ -14,7 +14,9 @@ function Topbar(){
   return (
     <div className={ topbarStyle.div }>
       <div className='flex middel-content fill-h fill-w'>
-        <IconButton className={ topbarStyle.menuButton } aria-label='menu'>
+        <IconButton onClick={() => {
+          alert('clicked');
+        }} className={ topbarStyle.menuButton } aria-label='menu'>
           <MenuIcon style={{ color: '#FFFFFF' }}/>
         </IconButton>
       </div>
