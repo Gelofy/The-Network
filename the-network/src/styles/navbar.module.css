@@ -17,6 +17,7 @@
 
 @media only screen and (max-width: 800px) {
     .div{
+        z-index: 1;
         position: fixed;
         left: -201px;
         width: 200px;

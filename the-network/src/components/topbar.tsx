@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import $ from "jquery";
+import anime from 'animejs';
+
+import ExpandMenu from '@/scripts/expandMenu';
+
 import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import topbarStyle from "@/styles/topbar.module.css";
 
@@ -11,11 +16,33 @@ import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 
 function Topbar(){
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <div className={ topbarStyle.div }>
-      <div className='flex middel-content fill-h fill-w'>
+      <div className='flex middle-content fill-h fill-w'>
         <IconButton onClick={() => {
-          alert('clicked');
+          console.log("Anime");
+          if (expanded) {
+              anime({
+                  targets: "#navbar",
+                  left: "-201px",
+                  easing: 'easeOutExpo',
+                  duration: 200
+              });
+              console.log(expanded);
+              setExpanded(false);
+          }
+          else {
+              anime({
+                  targets: "#navbar",
+                  left: "0px",
+                  easing: 'easeOutExpo',
+                  duration: 200
+              });
+              console.log(expanded);
+              setExpanded(true);
+          }
         }} className={ topbarStyle.menuButton } aria-label='menu'>
           <MenuIcon style={{ color: '#FFFFFF' }}/>
         </IconButton>

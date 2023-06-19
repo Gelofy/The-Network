@@ -11,7 +11,7 @@ import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
 function Navbar(){
   return (
-    <nav className={ navbarStyle.div }>
+    <nav id='navbar' className={ navbarStyle.div}>
       {/* Navbar Header */}
       <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={ navbarStyle.navbarHeader }>
         <div className='flex middle-content center-content'>
