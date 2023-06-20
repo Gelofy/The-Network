@@ -13,7 +13,6 @@
 
 @media only screen and (max-width: 800px) {
     .div{
-        position: fixed;
         width: 100vw;
     }
     .menuButton{

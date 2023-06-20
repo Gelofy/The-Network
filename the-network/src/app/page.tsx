@@ -18,10 +18,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <main>
-        <div className='flex'>
-          <Navbar />
-          <Topbar />
-        </div>
+        
         
 
       </main>

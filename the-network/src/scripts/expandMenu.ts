@@ -10,6 +10,7 @@ function ExpandMenu() {
     if (expanded) {
         expanded = false;
         anime({
+            delay: 100,
             targets: "#navbar",
             left: "-201px",
             easing: 'easeOutExpo',

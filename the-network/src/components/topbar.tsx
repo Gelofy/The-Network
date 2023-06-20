@@ -1,3 +1,4 @@
+'use client'
 import React, { Component, useState } from 'react';
 import $ from "jquery";
 import anime from 'animejs';
@@ -7,12 +8,6 @@ import ExpandMenu from '@/scripts/expandMenu';
 import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import topbarStyle from "@/styles/topbar.module.css";
 
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import DnsIcon from '@mui/icons-material/Dns';
-import InfoIcon from '@mui/icons-material/Info';
-import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
-import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 
 function Topbar(){

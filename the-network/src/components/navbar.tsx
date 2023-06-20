@@ -7,7 +7,6 @@ import ExpandMenu from '@/scripts/expandMenu';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import DnsIcon from '@mui/icons-material/Dns';
-import InfoIcon from '@mui/icons-material/Info';  
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
