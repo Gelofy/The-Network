@@ -22,27 +22,7 @@ function Topbar(){
     <div className={ topbarStyle.div }>
       <div className='flex middle-content fill-h fill-w'>
         <IconButton onClick={() => {
-          console.log("Anime");
-          if (expanded) {
-              anime({
-                  targets: "#navbar",
-                  left: "-201px",
-                  easing: 'easeOutExpo',
-                  duration: 200
-              });
-              console.log(expanded);
-              setExpanded(false);
-          }
-          else {
-              anime({
-                  targets: "#navbar",
-                  left: "0px",
-                  easing: 'easeOutExpo',
-                  duration: 200
-              });
-              console.log(expanded);
-              setExpanded(true);
-          }
+          ExpandMenu();
         }} className={ topbarStyle.menuButton } aria-label='menu'>
           <MenuIcon style={{ color: '#FFFFFF' }}/>
         </IconButton>

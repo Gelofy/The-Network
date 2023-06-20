@@ -1,23 +1,51 @@
+import React, { Component, useState } from 'react';
 import $ from "jquery";
 import anime from 'animejs/lib/anime.es.js';
 
+var expanded = false;
+
 function ExpandMenu() {
-    var expanded = false;
 
     console.log("Anime");
     if (expanded) {
+        expanded = false;
         anime({
-            target: ".navbar",
-            translateX: -201,
+            targets: "#navbar",
+            left: "-201px",
+            easing: 'easeOutExpo',
+            duration: 200
+        });
+        anime({
+            targets: "#blur",
+            background: "rgba(48,48,48, .0)",
+            easing: 'easeOutExpo',
+            duration: 200,
+            begin: function(anim) {
+                $("#blur").css('visibility', 'hidden')
+            }
         });
         console.log(expanded);
+        
     }
     else {
+        expanded = true;
         anime({
-            target: ".navbar",
-            translateX: 201,
+            targets: "#navbar",
+            left: "0px",
+            easing: 'easeOutExpo',
+            duration: 200
+        });
+        anime({
+            targets: "#blur",
+            background: "rgba(48,48,48, .79)",
+            easing: 'easeOutExpo',
+            duration: 200,
+            begin: function(anim) {
+                $("#blur").css('visibility', 'visible')
+            }
         });
         console.log(expanded);
+        
     }
 }
 

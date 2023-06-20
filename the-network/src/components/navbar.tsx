@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import navbarStyle from '@/styles/navbar.module.css'
 
+import ExpandMenu from '@/scripts/expandMenu';
+
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
 import DnsIcon from '@mui/icons-material/Dns';
@@ -11,9 +13,10 @@ import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
 function Navbar(){
   return (
-    <nav id='navbar' className={ navbarStyle.div}>
+    <>
+    <nav id='navbar' className={navbarStyle.div}>
       {/* Navbar Header */}
-      <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={ navbarStyle.navbarHeader }>
+      <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={navbarStyle.navbarHeader}>
         <div className='flex middle-content center-content'>
           <DnsIcon sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }}></DnsIcon>
         </div>
@@ -23,11 +26,11 @@ function Navbar(){
           </Typography>
         </div>
       </Stack>
-      <Divider variant="middle" style={{ backgroundColor: '#636363' }}/>
+      <Divider variant="middle" style={{ backgroundColor: '#636363' }} />
       {/* List of Subsites */}
-      <List className={ navbarStyle.list}>
+      <List className={navbarStyle.list}>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => ExpandMenu()}>
             <ListItemIcon style={{ color: '#FFFFFF' }}>
               <HomeRoundedIcon />
             </ListItemIcon>
@@ -35,7 +38,7 @@ function Navbar(){
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => ExpandMenu()}>
             <ListItemIcon style={{ color: '#FFFFFF' }}>
               <GroupsRoundedIcon />
             </ListItemIcon>
@@ -43,33 +46,25 @@ function Navbar(){
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => ExpandMenu()}>
             <ListItemIcon style={{ color: '#FFFFFF' }}>
               <AnnouncementRoundedIcon />
             </ListItemIcon>
             <ListItemText style={{ color: '#FFFFFF' }} primary="News" />
           </ListItemButton>
         </ListItem>
-        {/*
         <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon style={{ color: '#FFFFFF' }}>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText style={{ color: '#FFFFFF' }} primary="About" />
-          </ListItemButton>
-        </ListItem>
-        */}  
-        <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => ExpandMenu()}>
             <ListItemIcon style={{ color: '#FFFFFF' }}>
               <StoreRoundedIcon />
             </ListItemIcon>
-            <ListItemText style={{ color: '#FFFFFF' }} primary="Services" />
+            <ListItemText  style={{ color: '#FFFFFF' }} primary="Services" />
           </ListItemButton>
         </ListItem>
       </List>
     </nav>
+    <div onClick={() => ExpandMenu()} id='blur' className={ navbarStyle.blur }></div>
+    </>
   );
 }
 export default Navbar;
