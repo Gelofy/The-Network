@@ -1,3 +1,4 @@
+'use client'
 import React, { Component } from 'react';
 import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import navbarStyle from '@/styles/navbar.module.css'
