@@ -22,6 +22,7 @@ function Topbar(){
           <MenuIcon style={{ color: '#FFFFFF' }}/>
         </IconButton>
       </div>
+      <div></div>
     </div>
   );
 }
