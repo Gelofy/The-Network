@@ -6,7 +6,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 import '../scripts/SupabaseClient';
 
-import { showNavbar } from '@/app/layout';
+import { showNavbar } from '@/app/providers';
 
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";

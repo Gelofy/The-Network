@@ -4,7 +4,7 @@ import { IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon,
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { createContext, useContext, useState } from 'react';
 
-import { showNavbar } from '@/app/layout';
+import { showNavbar } from '@/app/providers';
 
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
