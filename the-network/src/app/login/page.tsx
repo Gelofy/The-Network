@@ -4,8 +4,6 @@ import { IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon,
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { createContext, useContext, useState } from 'react';
 
-import '../scripts/SupabaseClient';
-
 import { showNavbar } from '@/app/layout';
 
 import Navbar from "@/components/navbar";
@@ -20,9 +18,9 @@ const theme = createTheme({
   },
 });
 
-export default function Home() {
+export default function LoginPage() {
   const { showNav, setShowNav } = useContext(showNavbar);
-  setShowNav(true);
+  setShowNav(false);
 
   return (
     <ThemeProvider theme={theme}>
