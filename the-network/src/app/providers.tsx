@@ -3,17 +3,38 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import React, { createContext, useContext, useState } from 'react';
 
-export const showNavbar = createContext(null);
+export const NavbarContext = createContext<{
+  showNav: boolean | null;
+  setShowNav: React.Dispatch<React.SetStateAction<boolean | null>>;
+} | null>(null);
 
 export default function Providers({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
-    const [showNav, setShowNav] = React.useState(false);
-    return (
-        <showNavbar.Provider value={{ showNav: showNav, setShowNav: setShowNav }}>
-            {children}
-        </showNavbar.Provider>
-    );
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [showNav, setShowNav] = useState<boolean | null>(null);
+  return (
+    <NavbarContext.Provider value={{ showNav, setShowNav }}>
+      {children}
+    </NavbarContext.Provider>
+  );
 }
+/*
+import React, { createContext, useContext, useState } from 'react';
+
+export const NavbarContext = createContext<boolean | null>(null);
+
+export default function Providers({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [showNav, setShowNav] = useState<boolean | null>(null);
+  return (
+    <NavbarContext.Provider value={{ showNav, setShowNav }}>
+      {children}
+    </NavbarContext.Provider>
+  );
+}
+*/

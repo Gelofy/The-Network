@@ -11,10 +11,17 @@ import DnsIcon from '@mui/icons-material/Dns';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
-import { showNavbar } from '@/app/providers';
+import { NavbarContext } from '@/app/providers';
 
 function Navbar(){
-  const { showNav, setShowNav } = useContext(showNavbar);
+  const context = useContext(NavbarContext);
+
+  if (!context) {
+    // Handle the case where context is not available (optional)
+    return null;
+  }
+
+  const { showNav, setShowNav } = context;
   if (showNav) {
     return (
       <>

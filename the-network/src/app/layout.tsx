@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
-import { showNavbar } from '@/app/providers';
 import Providers from "@/app/providers"
 const inter = Inter({ subsets: ['latin'] });
 
