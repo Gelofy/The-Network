@@ -20,21 +20,3 @@ export default function Providers({
     </NavbarContext.Provider>
   );
 }
-/*
-import React, { createContext, useContext, useState } from 'react';
-
-export const NavbarContext = createContext<boolean | null>(null);
-
-export default function Providers({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [showNav, setShowNav] = useState<boolean | null>(null);
-  return (
-    <NavbarContext.Provider value={{ showNav, setShowNav }}>
-      {children}
-    </NavbarContext.Provider>
-  );
-}
-*/

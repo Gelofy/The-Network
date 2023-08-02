@@ -1,5 +1,5 @@
 'use client'
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useContext } from 'react';
 import $ from "jquery";
 import anime from 'animejs';
 
@@ -10,8 +10,19 @@ import topbarStyle from "@/styles/topbar.module.css";
 
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { NavbarContext } from '@/app/providers';
+
+
 function Topbar(){
   const [expanded, setExpanded] = useState(false);
+  const context = useContext(NavbarContext);
+
+  if (!context) {
+    // Handle the case where context is not available (optional)
+    return null;
+  }
+
+  const { showNav, setShowNav } = context;
 
   return (
     <div className={ topbarStyle.div }>

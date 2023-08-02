@@ -1,5 +1,5 @@
 .div{
-    width: calc(100vw - 200px);
+    width: calc(100vw - 201px);
     height: 60px;
     border-bottom: solid 1px #636363;
 }

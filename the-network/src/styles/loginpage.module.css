@@ -1,5 +1,13 @@
-.div{
+.form{
     background-color: #3b3b3b;
     width: 70%;
     height: 30%;
+    border-radius: 8px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 61px);
 }

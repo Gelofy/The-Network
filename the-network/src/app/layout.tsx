@@ -12,6 +12,20 @@ export const metadata = {
   description: ' - WIP - ',
 }
 
+/*
+const onReady = (callback) =>{
+  if (document.readyState!='loading') callback();
+  else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+  else document.attachEvent('onreadystatechange', function() {
+    if (document.readyState=='complete') callback();
+  });
+};
+
+ready(() => { 
+   // Do things after DOM has fully loaded 
+});
+*/
+
 export default function RootLayout({
   children,
 }: {
@@ -23,8 +37,10 @@ export default function RootLayout({
         <Providers>
           <div className='flex'>
             <Navbar />
-            <Topbar />
-            {children}
+            <div>
+              <Topbar />
+              {children}
+            </div>
           </div>
         </Providers>
       </body>

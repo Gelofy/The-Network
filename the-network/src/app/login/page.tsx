@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { createContext, useContext, useState } from 'react';
 
 import { NavbarContext } from '@/app/providers';
-
+import loginStyle from '@/styles/loginpage.module.css';
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
 
@@ -31,9 +31,8 @@ export default function LoginPage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <main>
-        <div></div>
-        
+      <main className={ loginStyle.main }>
+        <form className={ loginStyle.form }></form>
 
       </main>
     </ThemeProvider>

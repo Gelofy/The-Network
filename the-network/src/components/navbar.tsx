@@ -22,6 +22,7 @@ function Navbar(){
   }
 
   const { showNav, setShowNav } = context;
+
   if (showNav) {
     return (
       <>
