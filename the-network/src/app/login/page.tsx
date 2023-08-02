@@ -32,7 +32,7 @@ export default function LoginPage() {
   return (
     <ThemeProvider theme={theme}>
       <main>
-        
+        <div></div>
         
 
       </main>
