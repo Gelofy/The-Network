@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText, TextField } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { createContext, useContext, useState } from 'react';
 
@@ -32,8 +32,25 @@ export default function LoginPage() {
   return (
     <ThemeProvider theme={theme}>
       <main className={ loginStyle.main }>
-        <form className={ loginStyle.form }></form>
+        <form className={ loginStyle.form }>
+          <Stack spacing={2} >
+            <TextField
+              required
+              id="outlined-email-input"
+              label="Email"
+              autoComplete="current-email"
+            />
+            <TextField
+              required
+              id="outlined-password-input"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+            />
+          </Stack>
+          <Button variant="outlined">Login</Button>
 
+        </form>
       </main>
     </ThemeProvider>
 
