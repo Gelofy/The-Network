@@ -39,6 +39,7 @@ export default function LoginPage() {
               id="outlined-email-input"
               label="Email"
               autoComplete="current-email"
+              color='primary'
             />
             <TextField
               required
