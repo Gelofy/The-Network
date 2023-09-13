@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React, { createContext, useContext, useState } from 'react';
-
-import '../scripts/SupabaseClient';
+// Uncomment to use supabase
+//import '../scripts/SupabaseClient';
 
 import { NavbarContext } from '@/app/providers';
 
