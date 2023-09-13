@@ -4,4 +4,8 @@
     overscroll-behavior: none;
     -webkit-font-smoothing: antialiased;
     overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
   }
