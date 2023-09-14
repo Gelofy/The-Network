@@ -1,13 +1,37 @@
-.form{
+.form {
     background-color: #3b3b3b;
     width: 70%;
-    height: 30%;
-    border-radius: 2px;
+    max-width: 500px;
+    min-width: 200px;
+    min-height: 300px;
+    border-radius: 5px;
 }
-.main{
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: calc(100vh - 61px);
+}
+
+.outlinedEmailInput{
+    margin-top: 30px;
+    width: 80%;
+    caret-color: white;
+}
+.outlinedPasswordInput{
+    margin-top: 20px;
+    width: 80%;
+    caret-color: white;
+}
+
+.loginButton {
+    margin-top: 25px;
+}
+
+.loginTitle {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
 }
