@@ -12,10 +12,11 @@
 import { NextStudio } from 'next-sanity/studio';
 import config from '../../../../sanity.config';
 import styles from "@/styles/sanityStudiopage.module.css";
-import React, { createContext, useContext, useState } from 'react';
+
+import { ShowBars } from '@/scripts/showBars';
 
 export default function StudioPage() {
-
+  ShowBars(false, false);
   return(
     <NextStudio config={config} />
   )

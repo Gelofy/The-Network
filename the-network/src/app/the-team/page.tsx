@@ -22,8 +22,9 @@ export default function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      <main className='basepage'>
-        <div></div>
+      <main>
+        
+        
 
       </main>
     </ThemeProvider>

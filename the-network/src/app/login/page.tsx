@@ -14,6 +14,7 @@ import { NavbarContext } from '@/app/providers';
 import loginStyle from '@/styles/loginpage.module.css';
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
+import { ShowBars } from '@/scripts/showBars';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -43,16 +44,7 @@ const theme = createTheme({
 });
 
 export default function LoginPage() {
-  const context = useContext(NavbarContext);
-
-  if (!context) {
-    // Handle the case where context is not available (optional)
-    return null;
-  }
-
-  const { showNav, setShowNav } = context;  
-  setShowNav(false);
-
+  ShowBars(false, false);
   return (
     <ThemeProvider theme={theme}>
       <main className={ loginStyle.main }>

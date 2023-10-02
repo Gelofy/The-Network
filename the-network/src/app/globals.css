@@ -19,3 +19,21 @@ body{
 .fill-w{
     width: 100%;
 }
+
+.basepage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: calc(100vw - 201px);
+    max-width: calc(100vw);
+    height: calc(100vh - 61px);
+}
+
+/* This assumes no margin or padding on #app's parent(s) */
+#app {
+    height: 100vh;
+    max-height: 100dvh;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    overflow: auto;
+  }

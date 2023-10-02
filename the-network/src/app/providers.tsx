@@ -7,6 +7,10 @@ export const NavbarContext = createContext<{
   showNav: boolean | null;
   setShowNav: React.Dispatch<React.SetStateAction<boolean | null>>;
 } | null>(null);
+export const TopbarContext = createContext<{
+  showTop: boolean | null;
+  setShowTop: React.Dispatch<React.SetStateAction<boolean | null>>;
+} | null>(null);
 
 export default function Providers({
   children,
@@ -14,9 +18,12 @@ export default function Providers({
   children: React.ReactNode;
 }) {
   const [showNav, setShowNav] = useState<boolean | null>(null);
+  const [showTop, setShowTop] = useState<boolean | null>(null);
   return (
     <NavbarContext.Provider value={{ showNav, setShowNav }}>
-      {children}
+      <TopbarContext.Provider value={{ showTop, setShowTop }}>
+        {children}
+      </TopbarContext.Provider>
     </NavbarContext.Provider>
   );
 }
