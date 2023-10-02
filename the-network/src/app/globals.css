@@ -29,6 +29,20 @@ body{
     height: calc(100vh - 61px);
 }
 
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: #fff;
+}
+
+hr{
+    border-color: #636363 !important;
+}
+
 /* This assumes no margin or padding on #app's parent(s) */
 #app {
     height: 100vh;
