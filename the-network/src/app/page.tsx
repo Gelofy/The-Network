@@ -43,9 +43,9 @@ export default function Home() {
         <div className=''>
           <Stack className="center" divider={<Divider orientation="horizontal" variant="middle" flexItem />} spacing={2}>
             <StorageIcon className="text" sx={{ fontSize: "200px" }}></StorageIcon>
-            <Typography id='title' className="text" variant="h2" component="h1">
+            <h1 id='title' className="text underline text-3xl">
               <b>The Network</b>
-            </Typography>
+            </h1>
           </Stack>
           
         </div>
