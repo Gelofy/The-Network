@@ -9,6 +9,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 import "@/scripts/animateTitle";
 import { ShowBars } from '@/scripts/showBars';
+import "@/scripts/animateTitle";
 
 const theme = createTheme({
   palette: {
@@ -42,7 +43,7 @@ export default function Home() {
         <div className=''>
           <Stack className="center" divider={<Divider orientation="horizontal" variant="middle" flexItem />} spacing={2}>
             <StorageIcon className="text" sx={{ fontSize: "200px" }}></StorageIcon>
-            <Typography className="text" variant="h2" component="h1">
+            <Typography id='title' className="text" variant="h2" component="h1">
               <b>The Network</b>
             </Typography>
           </Stack>
