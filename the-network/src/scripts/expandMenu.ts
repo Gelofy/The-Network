@@ -5,8 +5,6 @@ import anime from 'animejs/lib/anime.es.js';
 var expanded = false;
 
 function ExpandMenu() {
-
-    console.log("Anime");
     if (expanded) {
         expanded = false;
         anime({
@@ -24,9 +22,7 @@ function ExpandMenu() {
             begin: function(anim) {
                 $("#blur").css('visibility', 'hidden')
             }
-        });
-        console.log(expanded);
-        
+        });        
     }
     else {
         expanded = true;
@@ -44,9 +40,7 @@ function ExpandMenu() {
             begin: function(anim) {
                 $("#blur").css('visibility', 'visible')
             }
-        });
-        console.log(expanded);
-        
+        });        
     }
 }
 

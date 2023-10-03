@@ -39,11 +39,11 @@ export default function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      <main className='basepage'>
-        <div className=''>
+      <main className='flex justify-center basepage'>
+        <div className='mt-24'>
           <Stack className="center" divider={<Divider orientation="horizontal" variant="middle" flexItem />} spacing={2}>
-            <StorageIcon className="text" sx={{ fontSize: "200px" }}></StorageIcon>
-            <h1 id='title' className="text underline text-3xl">
+            <StorageIcon className="text-slate-50" sx={{ fontSize: "200px" }}></StorageIcon>
+            <h1 id='title' className="text-slate-50 underline text-3xl">
               <b>The Network</b>
             </h1>
           </Stack>
