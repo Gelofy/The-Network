@@ -12,7 +12,7 @@ import '@fontsource/roboto/700.css';
 
 import { NavbarContext } from '@/app/providers';
 import loginStyle from '@/styles/loginpage.module.css';
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar/navbar";
 import Topbar from "@/components/topbar";
 import { ShowBars } from '@/scripts/showBars';
 

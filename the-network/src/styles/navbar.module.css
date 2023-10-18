@@ -15,6 +15,11 @@
     margin-bottom: 30px;
 }
 
+.navbarListItem{
+    color: #FFF;
+    background: #303030;
+}
+
 .link{
     color: #FFF;
     cursor: pointer;

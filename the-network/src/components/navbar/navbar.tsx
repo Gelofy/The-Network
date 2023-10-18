@@ -13,6 +13,8 @@ import DnsIcon from '@mui/icons-material/Dns';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
+import NavbarListItem from '@/components/navbar/listItem';
+
 import { NavbarContext } from '@/app/providers';
 
 function Navbar(){
@@ -44,48 +46,10 @@ function Navbar(){
         </Link>
         <Divider variant="middle" style={{ backgroundColor: '#636363' }} />
         {/* List of Subsites */}
-        <List className={navbarStyle.list}>
-          <Link className={navbarStyle.link} href="/">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <HomeRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="Home" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/the-team">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <GroupsRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="The Team" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/news">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <AnnouncementRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="News" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/services">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <StoreRoundedIcon />
-                </ListItemIcon>
-                <ListItemText  style={{ color: '#FFFFFF' }} primary="Services" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        </List>
+        <ul>
+          <NavbarListItem></NavbarListItem>
+
+        </ul>
       </nav>
       <div onClick={() => ExpandMenu()} id='blur' className={ navbarStyle.blur }></div>
       </>
