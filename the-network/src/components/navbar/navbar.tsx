@@ -1,5 +1,6 @@
 'use client'
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 
 import React, { createContext, useContext, useState } from 'react';
 import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
@@ -13,51 +14,55 @@ import DnsIcon from '@mui/icons-material/Dns';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
 
-import NavbarListItem from '@/components/navbar/listItem';
-
 import { NavbarContext } from '@/app/providers';
 
-function Navbar(){
-  const context = useContext(NavbarContext);
+import NavbarListItem from "@/components/navbar/listItem"
 
-  if (!context) {
-    // Handle the case where context is not available (optional)
-    return null;
-  }
+export default function Navbar(){
+  return (
+    <>
+    <nav
+      id="sidenav-1"
+      className="sidenav"
+      data-mdb-hidden="false"
+    >
+      <ul className="sidenav-menu">
+        <li className="sidenav-item">
+          <a className="sidenav-link">
+            <i className="far fa-smile fa-fw me-3"></i><span>Link 1</span></a
+          >
+        </li>
+        <li className="sidenav-item">
+          <a className="sidenav-link"
+            ><i className="fas fa-grin fa-fw me-3"></i><span>Category 1</span></a
+          >
+          <ul className="sidenav-collapse show">
+            <li className="sidenav-item">
+              <a className="sidenav-link">Link 2</a>
+            </li>
+            <li className="sidenav-item">
+              <a className="sidenav-link">Link 3</a>
+            </li>
+          </ul>
+        </li>
+        <li className="sidenav-item">
+          <a className="sidenav-link"
+            ><i className="fas fa-grin-wink fa-fw me-3"></i><span>Category 2</span></a
+          >
+          <ul className="sidenav-collapse">
+            <li className="sidenav-item">
+              <a className="sidenav-link">Link 4</a>
+            </li>
+            <li className="sidenav-item">
+              <a className="sidenav-link"
+                >Link 5</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    </>
 
-  const { showNav, setShowNav } = context;
-
-  if (showNav) {
-    return (
-      <>
-      <nav id='navbar' className={navbarStyle.div}>
-        {/* Navbar Header */}
-        <Link className={navbarStyle.link} href="/">
-          <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={navbarStyle.navbarHeader}>
-            <div className='flex middle-content center-content'>
-              <DnsIcon sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }}></DnsIcon>
-            </div>
-            <div className='flex middle-content center-content'>
-              <Typography sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }} component="p">
-                The Network
-              </Typography>
-            </div>
-          </Stack>
-        </Link>
-        <Divider variant="middle" style={{ backgroundColor: '#636363' }} />
-        {/* List of Subsites */}
-        <ul>
-          <NavbarListItem></NavbarListItem>
-
-        </ul>
-      </nav>
-      <div onClick={() => ExpandMenu()} id='blur' className={ navbarStyle.blur }></div>
-      </>
-    );
-  }
-  else {
-    return;
-  }
-  
+  );
 }
-export default Navbar;

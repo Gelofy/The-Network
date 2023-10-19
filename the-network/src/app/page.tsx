@@ -39,18 +39,33 @@ export default function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      <main className='flex justify-center basepage'>
-        <div className='mt-24'>
-          <Stack className="center" divider={<Divider orientation="horizontal" variant="middle" flexItem />} spacing={2}>
-            <StorageIcon className="text-slate-50" sx={{ fontSize: "200px" }}></StorageIcon>
-            <h1 id='title' className="text-slate-50 underline text-3xl">
-              <b>The Network</b>
-            </h1>
-          </Stack>
-          
-        </div>
+      {/*
+        <main className='flex justify-center basepage'>
+          <div className='mt-24'>
+            <Stack className="center" divider={<Divider orientation="horizontal" variant="middle" flexItem />} spacing={2}>
+              <StorageIcon className="text-slate-50" sx={{ fontSize: "200px" }}></StorageIcon>
+              <h1 id='title' className="text-slate-50 underline text-3xl">
+                <b>The Network</b>
+              </h1>
+            </Stack>
+            
+          </div>
 
-      </main>
+        </main>
+      */} 
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">Card title</h5>
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+          <button 
+          type="button" className="btn btn-primary"
+          data-mdb-toggle="sidenav"
+          data-mdb-target="#sidenav-1"
+          aria-controls="#sidenav-1"
+          aria-haspopup="true"
+          >Menu</button>
+        </div>
+      </div>
     </ThemeProvider>
 
   )

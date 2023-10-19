@@ -1,30 +1,23 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import React, { useContext } from 'react';
+import Script from 'next/script';
+
+import "@/styles/mdb.min.css";
 
 import Navbar from "@/components/navbar/navbar";
 import Topbar from "@/components/topbar";
 import Providers from "@/app/providers"
 const inter = Inter({ subsets: ['latin'] });
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export const metadata = {
   title: 'The Network',
   description: ' - WIP - ',
 }
-
-/*
-const onReady = (callback) =>{
-  if (document.readyState!='loading') callback();
-  else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
-  else document.attachEvent('onreadystatechange', function() {
-    if (document.readyState=='complete') callback();
-  });
-};
-
-ready(() => { 
-   // Do things after DOM has fully loaded 
-});
-*/
 
 export default function RootLayout({
   children,
@@ -33,14 +26,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script src="mdb6/js/mdb.min.js" />
       <body className={inter.className}>
         <Providers>
-          <div className='flex'>
+        <Topbar />
+          <div className='container'>
+            <div className='section'>
             <Navbar />
             <div>
-              <Topbar />
+              
               {children}
             </div>
+            </div>
+            
           </div>
         </Providers>
       </body>
