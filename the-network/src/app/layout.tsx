@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import React, { useContext } from 'react';
 
 import Navbar from "@/components/navbar";
-import Topbar from "@/components/topbar";
 import Providers from "@/app/providers"
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,10 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <div className='flex'>
+          <div>
             <Navbar />
-            <div>
-              <Topbar />
+            <div className='w-full'>
               {children}
             </div>
           </div>

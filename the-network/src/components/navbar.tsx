@@ -2,98 +2,156 @@
 import Link from 'next/link'
 
 import React, { createContext, useContext, useState } from 'react';
-import { Typography, Divider, IconButton, Stack, Button, List,ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import navbarStyle from '@/styles/navbar.module.css'
 
-import ExpandMenu from '@/scripts/expandMenu';
-
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import DnsIcon from '@mui/icons-material/Dns';
-import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
-import AnnouncementRoundedIcon from '@mui/icons-material/AnnouncementRounded';
-
-import { NavbarContext } from '@/app/providers';
-
-function Navbar(){
-  const context = useContext(NavbarContext);
-
-  if (!context) {
-    // Handle the case where context is not available (optional)
-    return null;
-  }
-
-  const { showNav, setShowNav } = context;
-
-  if (showNav) {
-    return (
-      <>
-      <nav id='navbar' className={navbarStyle.div}>
-        {/* Navbar Header */}
-        <Link className={navbarStyle.link} href="/">
-          <Stack sx={{ paddingTop: "30px" }} direction="row" divider={<Divider orientation="vertical" flexItem style={{ backgroundColor: '#636363' }} />} className={navbarStyle.navbarHeader}>
-            <div className='flex middle-content center-content'>
-              <DnsIcon sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }}></DnsIcon>
-            </div>
-            <div className='flex middle-content center-content'>
-              <Typography sx={{ marginLeft: "8px", marginRight: "8px" }} style={{ color: '#FFFFFF' }} component="p">
-                The Network
-              </Typography>
-            </div>
-          </Stack>
-        </Link>
-        <Divider variant="middle" style={{ backgroundColor: '#636363' }} />
-        {/* List of Subsites */}
-        <List className={navbarStyle.list}>
-          <Link className={navbarStyle.link} href="/">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <HomeRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="Home" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/the-team">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <GroupsRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="The Team" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/news">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <AnnouncementRoundedIcon />
-                </ListItemIcon>
-                <ListItemText style={{ color: '#FFFFFF' }} primary="News" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link className={navbarStyle.link} href="/services">
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => ExpandMenu()}>
-                <ListItemIcon style={{ color: '#FFFFFF' }}>
-                  <StoreRoundedIcon />
-                </ListItemIcon>
-                <ListItemText  style={{ color: '#FFFFFF' }} primary="Services" />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        </List>
-      </nav>
-      <div onClick={() => ExpandMenu()} id='blur' className={ navbarStyle.blur }></div>
-      </>
-    );
-  }
-  else {
-    return;
-  }
-  
+export default function Navbar(){
+  return(
+    <nav className='flex w-full h-12 align-middle'>
+      <svg xmlns="http://www.w3.org/2000/svg" className="stroke-white icon icon-tabler icon-tabler-server ml-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"></path>
+        <path d="M3 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"></path>
+        <path d="M7 8l0 .01"></path>
+        <path d="M7 16l0 .01"></path>
+      </svg>
+    </nav>
+  );
 }
-export default Navbar;
+ 
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+ 
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+]
+ 
+function NavigationMenuDemo() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      shadcn/ui
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Beautifully designed components built with Radix UI and
+                      Tailwind CSS.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="/docs" title="Introduction">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem href="/docs/installation" title="Installation">
+                How to install dependencies and structure your app.
+              </ListItem>
+              <ListItem href="/docs/primitives/typography" title="Typography">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Documentation
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  )
+}
+ 
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
